@@ -1,14 +1,6 @@
 # wateringProject
 
 
-This is a copy of a conversation between ChatGPT & Anonymous.
-
-Report conversation
-
-Gut – dann machen wir das so, dass es im Lebenslauf Substanz hat und nicht wie ein Bastelprojekt wirkt.
-
----
-
 Zielbild (klar definieren)
 
 Ein System, das:
@@ -20,10 +12,6 @@ Ein System, das:
 - per Weboberfläche steuerbar ist
 
 - sauber aufgebaut ist (API, Struktur, Versionierung)
-
-
-Wichtig: Personaler interessiert nicht die Pflanze, sondern: → Wie du Software baust
-
 
 ---
 
@@ -51,7 +39,7 @@ Frontend
 
 Datenbank
 
-- SQLite (einfach) → später optional PostgreSQL
+- PostgreSQL
 
 
 Tools
@@ -59,8 +47,6 @@ Tools
 - Git (sauber nutzen!)
 
 - optional Docker
-
-
 
 ---
 
@@ -150,9 +136,6 @@ POST /water
 POST /settings
 
 
-Wenn du hier sauber bist → wirkt das direkt professionell
-
-
 ---
 
 Phase 2 – Erste Umsetzung (wichtigste Schritte)
@@ -164,8 +147,6 @@ Server starten
 erste Route: /health
 
 DB anbinden
-
-
 
 ---
 
@@ -179,7 +160,6 @@ seriell oder HTTP POST
 Feuchtigkeitswert senden
 
 
-
 ---
 
 Schritt 3: Daten speichern
@@ -189,7 +169,6 @@ Messwerte in DB speichern
 Timestamp nicht vergessen
 
 
-
 ---
 
 Schritt 4: Logik bauen
@@ -197,7 +176,6 @@ Schritt 4: Logik bauen
 wenn Wert < Schwelle → bewässern
 
 nicht direkt im Controller, sondern Service
-
 
 
 ---
@@ -306,12 +284,6 @@ Wenn du es halb machst: → wirkt wie jedes zweite Hobbyprojekt
 
 ---
 
-Wenn du willst, kann ich dir im nächsten Schritt:
-
-konkreten Tech-Stack festlegen (z. B. Node vs PHP)
-
-und dir exakte erste Dateien + Codegerüst geben
-damit du ohne Rumprobieren starten kannst.
 
 Dein Plan ist grundsätzlich solide. Ein paar Dinge solltest du schärfen, damit es wirklich „bewerbungsstark“ wird und nicht nur technisch funktioniert.
 
@@ -324,21 +296,6 @@ Trennung von Verantwortlichkeiten
 skalierbare Struktur
 
 begründete Entscheidungen
-
-→ Schreib dir zu jedem Teil warum du ihn so baust, nicht nur was.
-
-2. Tech-Stack – klare Entscheidung
-Du solltest dich festlegen, nicht „Node oder PHP“.
-
-Empfehlung (realistisch für Jobs):
-
-Backend: Node.js (Express oder Fastify)
-
-DB: PostgreSQL (SQLite wirkt schnell nach „Demo“)
-
-Kommunikation Arduino → Backend: HTTP (kein Serial-Hack)
-
-Warum:
 
 näher an echter Backend-Entwicklung
 
