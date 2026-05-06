@@ -13,13 +13,13 @@ Zielbild (klar definieren)
 
 Ein System, das:
 
-Pflanzen automatisch bewässert
+- Pflanzen automatisch bewässert
 
-Daten speichert (Feuchtigkeit, Aktionen)
+- Daten speichert (Feuchtigkeit, Aktionen)
 
-per Weboberfläche steuerbar ist
+- per Weboberfläche steuerbar ist
 
-sauber aufgebaut ist (API, Struktur, Versionierung)
+- sauber aufgebaut ist (API, Struktur, Versionierung)
 
 
 Wichtig: Personaler interessiert nicht die Pflanze, sondern: → Wie du Software baust
