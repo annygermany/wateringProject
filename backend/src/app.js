@@ -25,5 +25,5 @@ const db = require('./config/db');
     }
 })();
 
-// const plantRoutes = require('./routes/plantRoutes');
-// app.use('/api/plants', plantRoutes);
+const plantRoutes = require('./routes/plantRoutes');
+app.use('/api/plants', plantRoutes);
