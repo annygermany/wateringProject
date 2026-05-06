@@ -1,5 +1,8 @@
 # wateringProject
 
+http://localhost:3000/api/health
+
+http://localhost:3000/api/plants
 
 Zielbild (klar definieren)
 
