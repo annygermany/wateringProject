@@ -18,3 +18,7 @@ const db = require('./config/db');
 db.query('SELECT NOW()')
     .then(res => console.log('DB connected:', res.rows[0]))
     .catch(err => console.error('DB error:', err));
+
+//Route einbinden (wichtig!)
+const plantRoutes = require('./routes/plantRoutes');
+app.use('/api/plants', plantRoutes);
