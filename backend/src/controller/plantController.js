@@ -1,4 +1,5 @@
 const plantService = require('../service/plantService');
+//Wie kommt der Request rein?)
 
 async function getPlants(req, res) {
     try {
