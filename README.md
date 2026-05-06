@@ -29,35 +29,36 @@ Wichtig: Personaler interessiert nicht die Pflanze, sondern: → Wie du Software
 
 Tech-Stack (pragmatisch gewählt)
 
-Hardware
+- Hardware
 
-Raspberry Pi (Server)
+- Raspberry Pi (Server)
 
-Arduino (Sensor + Aktor)
+- Arduino (Sensor + Aktor)
 
-
+---
 Backend (empfohlen)
 
-Node.js (modern, gefragt)
+- Node.js (modern, gefragt)
 oder PHP sauber mit Struktur (wenn du nah am Job bleiben willst)
 
+---
 
 Frontend
 
-Vanilla JS (ES6+)
-optional später Framework
+- Vanilla JS (ES6+)
+- optional später Framework
 
 
 Datenbank
 
-SQLite (einfach) → später optional PostgreSQL
+- SQLite (einfach) → später optional PostgreSQL
 
 
 Tools
 
-Git (sauber nutzen!)
+- Git (sauber nutzen!)
 
-optional Docker
+- optional Docker
 
 
 
