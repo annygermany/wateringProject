@@ -13,3 +13,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server läuft auf Port ${PORT}`);
 });
+const db = require('./config/db');
+
+db.query('SELECT NOW()')
+    .then(res => console.log('DB connected:', res.rows[0]))
+    .catch(err => console.error('DB error:', err));
