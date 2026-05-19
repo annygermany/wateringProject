@@ -7,7 +7,7 @@ async function getAllMeasurements() {
 }
 
 // Neuen Feuchtigkeits Messwert speichern
-async function createMeasurement(plant_id, moisture) {
+async function addMeasurement(plant_id, moisture) {
     const result = await db.query(
         `INSERT INTO measurements (plant_id, moisture)
          VALUES ($1, $2)
@@ -33,6 +33,6 @@ async function getLastMeasurement(plant_id) {
 
 module.exports = {
     getAllMeasurements,
-    createMeasurement,
+    addMeasurement,
     getLastMeasurement
 };

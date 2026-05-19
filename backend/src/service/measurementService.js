@@ -64,5 +64,5 @@ async function addMeasurement(data) {
 }
 
 module.exports = {
-    addMeasurement
-};
+    addMeasurement,
+    };

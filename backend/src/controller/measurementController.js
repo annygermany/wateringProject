@@ -10,10 +10,13 @@ async function getMeasurement(req, res) {
     }
 }
 
-async function createMeasurement(req, res) {
+async function addMeasurement(req, res) {
     try {
-        const measurement = await measurementService.addMeasurement(req.body);
-        res.status(201).json(measurement);
+        console.log('BODY:', req.body);
+
+        const data = await service.addMeasurement(req.body);
+        res.status(201).json(data);
+
     } catch (err) {
         res.status(400).json({ error: err.message });
     }
@@ -21,5 +24,5 @@ async function createMeasurement(req, res) {
 
 module.exports = {
     getMeasurement,
-    createMeasurement
+    addMeasurement
 };
