@@ -25,7 +25,7 @@ const db = require('./config/db');
     }
 })();
 
-const plantRoutes = require('./routes/plantRoutes');
+// const plantRoutes = require('./routes/plantRoutes');
 const measurementRoutes = require('./routes/measurementRoutes');
-app.use('/api/plants', plantRoutes);
+// app.use('/api/plants', plantRoutes);
 app.use('/api/measurements', measurementRoutes);

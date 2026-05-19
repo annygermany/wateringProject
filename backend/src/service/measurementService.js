@@ -1,6 +1,6 @@
 const measurementRepository = require('../repository/measurementRepository');
-const plantRepository = require('../repository/plantRepository');
-const wateringRepository = require('../repository/wateringRepository');
+// const plantRepository = require('../repository/plantRepository');
+// const wateringRepository = require('../repository/wateringRepository');
 
 const COOLDOWN_MINUTES = 30;
 

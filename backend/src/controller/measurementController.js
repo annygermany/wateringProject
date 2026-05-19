@@ -4,7 +4,7 @@ const service = require("../service/measurementService");
 
 async function getMeasurement(req, res) {
     try {
-        const measurement = await measurementService.getPlants();
+        const measurement = await measurementService.addMeasurement();
         res.json(measurement);
     } catch (err) {
         res.status(500).json({ error: err.message });
@@ -12,13 +12,10 @@ async function getMeasurement(req, res) {
 }
 
 async function addMeasurement(req, res) {
+    console.log('REQ BODY:', req.body);
     try {
-        console.log('BODY:', req.body);
-
-        const data = await service.addMeasurement(req.body);
-
-        res.status(201).json(data);
-
+        const result = await service.addMeasurement(req.body);
+        res.status(201).json(result);
     } catch (err) {
         res.status(400).json({ error: err.message });
     }
