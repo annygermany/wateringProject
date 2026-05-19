@@ -34,9 +34,9 @@ parser.on('data', async (line) => {
             data
         );
 
-        console.log('✅ Gespeichert:', response.data);
+        console.log('Gespeichert:', response.data);
 
     } catch (err) {
-        console.error('❌ Fehler:', err.message);
+        console.error('Fehler:', err.message);
     }
 });

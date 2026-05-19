@@ -1,22 +1,22 @@
 const measurementRepository = require('../repository/measurementRepository');
-// const plantRepository = require('../repository/plantRepository');
-// const wateringRepository = require('../repository/wateringRepository');
+const plantRepository = require('../repository/plantRepository');
+const wateringRepository = require('../repository/wateringRepository');
 
 const COOLDOWN_MINUTES = 30;
 
 async function addMeasurement(data) {
-    console.log('SERVICE INPUT:', data);
-    const { plant_id, moisture } = data;
-
-    if (!plant_id || moisture === undefined) {
-        throw new Error('plant_id und moisture sind Pflicht');
+    if (!data) {
+        throw new Error('DATA IS UNDEFINED');
     }
 
+    const { plant_id, moisture } = data;
+
+    console.log('measurementService addMeasturement():', data);
+
+
     // 1. Messwert speichern
-    const measurement = await measurementRepository.createMeasurement(
-        plant_id,
-        moisture
-    );
+    const measurement = await measurementRepository.addMeasurement(plant_id,moisture);
+    console.log('measurement:', measurement);
 
     // 2. Pflanze laden
     const plant = await plantRepository.getPlantById(plant_id);
@@ -64,7 +64,12 @@ async function addMeasurement(data) {
     return measurement;
 }
 
+async function getAllMeasurements() {
+
+    return await measurementRepository.getAllMeasurements();
+}
 module.exports = {
     addMeasurement,
+    getAllMeasurements,
     };
 
