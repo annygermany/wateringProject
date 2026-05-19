@@ -662,7 +662,7 @@ module.exports = {
   createPlant
 };
 8. Service Layer
-src/service/plantService.js
+src/service/measurementService.js
 
 const plantRepository = require('../repository/plantRepository');
 

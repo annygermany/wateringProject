@@ -27,3 +27,4 @@ const db = require('./config/db');
 
 const plantRoutes = require('./routes/plantRoutes');
 app.use('/api/plants', plantRoutes);
+app.use('/api/measurements', measurementRoutes);
