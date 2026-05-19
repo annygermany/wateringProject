@@ -5,6 +5,7 @@ const wateringRepository = require('../repository/wateringRepository');
 const COOLDOWN_MINUTES = 30;
 
 async function addMeasurement(data) {
+    console.log('SERVICE INPUT:', data);
     const { plant_id, moisture } = data;
 
     if (!plant_id || moisture === undefined) {
@@ -12,7 +13,7 @@ async function addMeasurement(data) {
     }
 
     // 1. Messwert speichern
-    const measurement = await measurementRepository.addMeasurement(
+    const measurement = await measurementRepository.createMeasurement(
         plant_id,
         moisture
     );
@@ -66,3 +67,4 @@ async function addMeasurement(data) {
 module.exports = {
     addMeasurement,
     };
+

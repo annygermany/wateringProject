@@ -1,4 +1,5 @@
 const measurementService = require('../service/measurementService');
+const service = require("../service/measurementService");
 //Wie kommt der Request rein?)
 
 async function getMeasurement(req, res) {
@@ -15,6 +16,7 @@ async function addMeasurement(req, res) {
         console.log('BODY:', req.body);
 
         const data = await service.addMeasurement(req.body);
+
         res.status(201).json(data);
 
     } catch (err) {

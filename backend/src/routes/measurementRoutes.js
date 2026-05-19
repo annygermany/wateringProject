@@ -10,4 +10,5 @@ const controller = require('../controller/measurementController');
 router.get('/', controller.getMeasurement);
 router.post('/', controller.addMeasurement);
 
+
 module.exports = router;
