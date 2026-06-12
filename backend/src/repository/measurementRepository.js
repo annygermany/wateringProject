@@ -11,14 +11,6 @@ async function addMeasurement(moisture) {
         [moisture]
     );
 
-    // const result = await db.query(
-    //     `UPDATE measurements SET moisture
-    //      = $1 WHERE id = 2
-    //      RETURNING *`,
-    //     [moisture]
-    // );
-
-
 
     return result.rows[0];
 }

@@ -5,7 +5,6 @@ const measurementRepository = require('../repository/measurementRepository');
 async function addMeasurement(data) {
 
     const rawMoistureValue = data['moisture'];
-    console.log("addMeasurement", rawMoistureValue);
 
     const moisturePercentage = calcMoistPercentage(rawMoistureValue);
     console.log('moisturePercentage',moisturePercentage);
@@ -20,8 +19,7 @@ async function getAllMeasurements() {
 }
 
  function calcMoistPercentage(rawValue) {
-console.log("calcMoistPercentage");
-console.log(rawValue);
+
     const min = 600;
     const max = 400;
     const percentage = ((max - rawValue) / (max - min) * 100)
