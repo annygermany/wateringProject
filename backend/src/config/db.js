@@ -1,7 +1,12 @@
-const { Pool } = require('pg');
+// Schritt 1: datenbank definieren
 
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL
+const{Pool} = require('pg');
+const pool= new Pool({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'plant_monitor',
+    password: '',
+    port: 5432
 });
 
 module.exports = pool;

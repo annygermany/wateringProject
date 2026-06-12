@@ -1,36 +1,29 @@
+// Schritt 2: Datenbankabrufe definieren
+
 const db = require('../config/db');
-//DB Queries
+
+async function addMeasurement(moisture) {
+    const result = await db.query(
+        `INSERT INTO measurements (moisture)
+         VALUES ($1)
+         RETURNING *`,
+        [moisture]
+    );
+
+    return result.rows[0];
+}
 
 async function getAllMeasurements() {
-    const result = await db.query('SELECT * FROM measurements');
+    const result = await db.query(
+        `SELECT *
+         FROM measurements
+         ORDER BY created_at DESC`
+    );
+
     return result.rows;
 }
 
-// Neuen Feuchtigkeits Messwert speichern
-async function addMeasurement(plant_id, moisture) {
-    const result = await db.query(
-        `INSERT INTO measurements (plant_id, moisture)
-         VALUES ($1, $2)
-         RETURNING *`,
-        [plant_id, moisture]
-    );
-    return result.rows[0];
-}
-
-// Letzte Feuchtigkeitsmessung einer Pflanze
-async function getLastMeasurement(plant_id) {
-    const result = await db.query(
-        `SELECT * FROM measurements
-         WHERE plant_id = $1
-         LIMIT 1`,
-        [plant_id]
-    );
-
-    return result.rows[0];
-}
-
 module.exports = {
-    getAllMeasurements,
     addMeasurement,
-    getLastMeasurement
+    getAllMeasurements
 };
