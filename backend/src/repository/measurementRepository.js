@@ -3,12 +3,22 @@
 const db = require('../config/db');
 
 async function addMeasurement(moisture) {
+    console.log("addmeasurement()");
     const result = await db.query(
         `INSERT INTO measurements (moisture)
          VALUES ($1)
          RETURNING *`,
         [moisture]
     );
+
+    // const result = await db.query(
+    //     `UPDATE measurements SET moisture
+    //      = $1 WHERE id = 2
+    //      RETURNING *`,
+    //     [moisture]
+    // );
+
+
 
     return result.rows[0];
 }

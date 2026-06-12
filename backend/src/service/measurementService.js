@@ -4,14 +4,14 @@ const measurementRepository = require('../repository/measurementRepository');
 
 async function addMeasurement(data) {
 
-    const { moisture } = data;
+    const rawMoistureValue = data['moisture'];
+    console.log("addMeasurement", rawMoistureValue);
 
-    if (moisture === undefined) {
-        throw new Error('moisture fehlt');
-    }
+    const moisturePercentage = calcMoistPercentage(rawMoistureValue);
+    console.log('moisturePercentage',moisturePercentage);
 
     return await measurementRepository.addMeasurement(
-        moisture
+        moisturePercentage
     );
 }
 
@@ -19,7 +19,16 @@ async function getAllMeasurements() {
     return await measurementRepository.getAllMeasurements();
 }
 
+ function calcMoistPercentage(rawValue) {
+console.log("calcMoistPercentage");
+console.log(rawValue);
+    const min = 600;
+    const max = 400;
+    const percentage = ((max - rawValue) / (max - min) * 100)
+    return Math.round(percentage);
+}
+
 module.exports = {
     addMeasurement,
-    getAllMeasurements
+    getAllMeasurements,
 };

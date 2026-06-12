@@ -1,5 +1,5 @@
-const { SerialPort } = require('serialport');
-const { ReadlineParser } =
+const {SerialPort} = require('serialport');
+const {ReadlineParser} =
     require('@serialport/parser-readline');
 
 const axios = require('axios');
@@ -24,19 +24,28 @@ parser.on('data', async (line) => {
     try {
 
         const data = JSON.parse(line);
+        console.log('parsed data', data);
+
+        console.log('➡ BEFORE AXIOS');
 
         await axios.post(
             'http://localhost:3000/api/measurements',
-            data
+            data,
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                timeout: 2000
+            }
         );
-
+        console.log('➡ After AXIOS');
         console.log(
             'Messwert gespeichert:',
             data
         );
 
     } catch (err) {
-
+        console.log(err);
         console.error(
             'Fehler:',
             err.message

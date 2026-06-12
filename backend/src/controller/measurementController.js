@@ -16,6 +16,7 @@ async function addMeasurement(req, res) {
 
     } catch (err) {
         console.error('❌ CONTROLLER ERROR:', err.message);
+        console.log()
         res.status(400).json({
             error: err.message
         });
