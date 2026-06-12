@@ -39,10 +39,6 @@ parser.on('data', async (line) => {
             }
         );
         console.log('➡ After AXIOS');
-        console.log(
-            'Messwert gespeichert:',
-            data
-        );
 
     } catch (err) {
         console.log(err);

@@ -11,9 +11,9 @@ async function addMeasurement(req, res) {
         const result = await measurementService.addMeasurement(
             req.body
         );
+        console.log("DB Speicherung erfolgreich: ", result);
 
         res.status(201).json(result);
-
     } catch (err) {
         console.error('❌ CONTROLLER ERROR:', err.message);
         console.log()
