@@ -3,6 +3,9 @@
 const measurementService = require('../service/measurementService');
 
 async function addMeasurement(req, res) {
+    console.log('🔥 CONTROLLER HIT');
+    console.log('BODY:', req.body);
+
     try {
 
         const result = await measurementService.addMeasurement(
@@ -12,7 +15,7 @@ async function addMeasurement(req, res) {
         res.status(201).json(result);
 
     } catch (err) {
-
+        console.error('❌ CONTROLLER ERROR:', err.message);
         res.status(400).json({
             error: err.message
         });
