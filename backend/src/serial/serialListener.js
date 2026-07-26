@@ -5,7 +5,7 @@ const {ReadlineParser} =
 const axios = require('axios');
 
 const port = new SerialPort({
-    path: 'COM7', // anpassen
+    path: 'COM3', // anpassen
     baudRate: 9600
 });
 

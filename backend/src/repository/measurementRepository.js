@@ -2,13 +2,14 @@
 
 const db = require('../config/db');
 
-async function addMeasurement(moisture) {
+async function addMeasurement(plant_id, moisture) {
     console.log("addmeasurement()");
+
     const result = await db.query(
-        `INSERT INTO measurements (moisture)
-         VALUES ($1)
+        `INSERT INTO measurements (plant_id,moisture)
+         VALUES ($1,$2)
          RETURNING *`,
-        [moisture]
+        [plant_id, moisture]
     );
 
 
