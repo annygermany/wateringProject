@@ -1,4 +1,4 @@
-const pool = require("../database/db");
+const pool = require("../config/db");
 
 async function addWatering(plantId, durationSeconds) {
     const query = `

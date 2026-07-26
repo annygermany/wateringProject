@@ -1,4 +1,4 @@
-const wateringRepository = require("../repositories/wateringRepository");
+const wateringRepository = require("../repository/wateringRepository");
 
 
 const DEFAULT_DURATION = 10;

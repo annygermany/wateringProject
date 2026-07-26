@@ -1,7 +1,7 @@
 // Schritt 3: Funktionen mit Fehlerbehandlung definieren, throws error
 
 const measurementRepository =
-    require("../repositories/measurementRepository");
+    require("../repository/measurementRepository");
 
 const wateringService =
     require("./wateringService");
