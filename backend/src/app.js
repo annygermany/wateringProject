@@ -30,3 +30,11 @@ app.listen(PORT, () => {
         `Server läuft auf Port ${PORT}`
     );
 });
+const wateringRoutes =
+    require("./routes/wateringRoutes");
+
+
+app.use(
+    "/api",
+    wateringRoutes
+);

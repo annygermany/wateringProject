@@ -1,33 +1,39 @@
-const wateringRepository = require("../repository/wateringRepository");
+const wateringRepository =
+    require("../repository/wateringRepository");
 
 
-const DEFAULT_DURATION = 10;
-
-
-async function waterPlant(plantId) {
-
-    console.log(
-        `💧 Bewässerung gestartet für Pflanze ${plantId}`
-    );
-
-
-    // später:
-    // Raspberry Pi Signal senden
-
-
-    const watering = await wateringRepository.addWatering(
-        plantId,
-        DEFAULT_DURATION
-    );
+async function waterPlant(
+    plant_id,
+    duration_seconds = 5
+) {
 
 
     console.log(
-        `✅ Bewässerung gespeichert`,
-        watering
+        "💧 Pumpe EIN für",
+        duration_seconds,
+        "Sekunden"
     );
 
 
-    return watering;
+    const event =
+        await wateringRepository.createWatering(
+            plant_id,
+            duration_seconds
+        );
+
+
+    setTimeout(() => {
+
+        console.log(
+            "💧 Pumpe AUS"
+        );
+
+    }, duration_seconds * 1000);
+
+
+
+    return event;
+
 }
 
 

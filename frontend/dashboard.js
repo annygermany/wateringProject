@@ -2,9 +2,9 @@
 
 const API_URL = "http://localhost:3000/api/measurements";
 
-
 let moistureChart;
-
+const waterButton =
+    document.getElementById("waterButton");
 
 async function loadMeasurements() {
     const response =
@@ -140,6 +140,84 @@ function updateChart(data) {
 
 loadMeasurements();
 
+
+
+
+
+waterButton.addEventListener(
+    "click",
+    async () => {
+
+        try {
+            waterButton.disabled = true;
+
+
+            document.getElementById(
+                "wateringStatus"
+            ).textContent =
+                "💧 Pumpe läuft...";
+
+
+            const response =
+                await fetch(
+                    "http://localhost:3000/api/watering",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body: JSON.stringify({
+
+                            plant_id: 1,
+                            duration_seconds: 5
+
+                        })
+                    }
+                );
+
+
+            if(!response.ok) {
+
+                throw new Error(
+                    "Bewässerung fehlgeschlagen"
+                );
+
+            }
+
+
+            document.getElementById(
+                "wateringStatus"
+            ).textContent =
+                "✅ Bewässerung beendet";
+
+
+        }
+
+
+        catch(error) {
+
+            console.error(error);
+
+
+            document.getElementById(
+                "wateringStatus"
+            ).textContent =
+                "❌ Fehler";
+
+        }
+
+
+        finally {
+
+            waterButton.disabled = false;
+
+        }
+
+    }
+);
 
 setInterval(() => {
 
