@@ -1,0 +1,109 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+header {
+    background: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+main {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.plant-name {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.moisture {
+    font-size: 5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.percent {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.status {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.dry {
+    background: #ffe0e0;
+    color: #b00020;
+}
+
+.okay {
+    background: #e0f5e5;
+    color: #187333;
+}
+
+.wet {
+    background: #e0ecff;
+    color: #1855a0;
+}
+
+.last-update {
+    margin-top: 25px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.error {
+    color: #b00020;
+    background: #ffe0e0;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+    main {
+        margin: 15px auto;
+        padding: 0 12px;
+    }
+
+    .card {
+        padding: 25px 15px;
+    }
+
+    .moisture {
+        font-size: 4rem;
+    }
+
+    header {
+        padding: 16px;
+    }
+}
