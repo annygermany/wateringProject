@@ -1,13 +1,14 @@
 // Schritt 6: greift auf die Routes zu
-
 require('dotenv').config();
-
 const express = require('express');
+const cors = require('cors');
+const app = express();
+app.use(cors());
+
+app.use(express.json());
 
 const measurementRoutes =
     require('./routes/measurementRoutes');
-
-const app = express();
 
 app.use(express.json());
 

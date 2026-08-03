@@ -22,16 +22,26 @@ function calcMoistPercentage(rawValue) {
 
 async function addMeasurement(data) {
 
-    const rawMoistureValue = data['moisture'];
-    const plant_id = data['plant_id'];
+    const plant_id = data.plant_id;
+    const rawMoistureValue = data.moisture;
 
-    console.log('rawMoistureValue:', rawMoistureValue);
-    console.log('plant_id:', plant_id);
 
-    const percentage = calcMoistPercentage(rawMoistureValue);
-    console.log('percentage:', percentage);
+    console.log(
+        "raw:",
+        rawMoistureValue
+    );
 
-    // Messung speichern
+
+    const percentage =
+        calcMoistPercentage(rawMoistureValue);
+
+
+    console.log(
+        "percentage:",
+        percentage
+    );
+
+
     const savedMeasurement =
         await measurementRepository.addMeasurement(
             plant_id,
@@ -39,16 +49,18 @@ async function addMeasurement(data) {
         );
 
 
-    // Trockenheitsprüfung
-    // 0 % = trocken
-    // 100 % = nass
+    if (percentage < 40) {
 
-    if (percentage < 20) {
-        console.log("🌱 Boden zu trocken");
+        console.log(
+            "🌱 Boden zu trocken"
+        );
+
+
         await wateringService.waterPlant(
             plant_id
         );
     }
+
 
     return savedMeasurement;
 }

@@ -5,5 +5,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="chart.js" level="application" />
+    <orderEntry type="library" name="chartjs-adapter-luxon" level="application" />
+    <orderEntry type="library" name="luxon" level="application" />
   </component>
 </module>
